@@ -1,0 +1,230 @@
+{
+    "mental_age": {
+      "questions": [
+        {
+          "question": "How do you prefer to spend your weekends?",
+          "options": [
+            "Reading a book",
+            "Going out with friends",
+            "Exploring new hobbies",
+            "Relaxing at home"
+          ]
+        },
+        {
+          "question": "Which activity helps you relax the most?",
+          "options": [
+            "Meditating",
+            "Watching a movie",
+            "Playing video games",
+            "Taking a nap"
+          ]
+        },
+        {
+          "question": "How do you respond to stress?",
+          "options": [
+            "Stay calm and think logically",
+            "Talk to friends",
+            "Take a brief break to recharge",
+            "Keep busy to avoid thinking of it"
+          ]
+        },
+        {
+          "question": "When planning your day, you:",
+          "options": [
+            "Plan every minute",
+            "Have a rough idea",
+            "Go with the flow",
+            "Prefer spontaneity"
+          ]
+        },
+        {
+          "question": "Your ideal vacation is:",
+          "options": [
+            "A quiet beach resort",
+            "An adventurous mountain trek",
+            "A bustling city tour",
+            "A cultural heritage trip"
+          ]
+        },
+        {
+          "question": "How do you make decisions?",
+          "options": [
+            "After careful thought",
+            "By trusting your gut",
+            "After consulting others",
+            "Spontaneously"
+          ]
+        },
+        {
+          "question": "What best describes your social life?",
+          "options": [
+            "Small and intimate gatherings",
+            "Large parties",
+            "Occasional meetups",
+            "Prefer solitude at times"
+          ]
+        },
+        {
+          "question": "Your work style is:",
+          "options": [
+            "Organized and planned",
+            "Flexible and creative",
+            "Focused yet relaxed",
+            "Energetic and fast-paced"
+          ]
+        }
+      ]
+    },
+    "actor": {
+      "questions": [
+        {
+          "question": "Which genre do you enjoy the most?",
+          "options": [
+            "Drama",
+            "Comedy",
+            "Action",
+            "Romance"
+          ]
+        },
+        {
+          "question": "How would you describe your style?",
+          "options": [
+            "Classic and sophisticated",
+            "Bold and daring",
+            "Casual and chill",
+            "Trendy and modern"
+          ]
+        },
+        {
+          "question": "Your social presence is:",
+          "options": [
+            "Elegant and refined",
+            "Charismatic and engaging",
+            "Mysterious and intense",
+            "Vibrant and outgoing"
+          ]
+        },
+        {
+          "question": "When facing a challenge, you:",
+          "options": [
+            "Face it head-on",
+            "Look for creative solutions",
+            "Find humor in the situation",
+            "Stay calm and composed"
+          ]
+        },
+        {
+          "question": "Your favorite type of role is:",
+          "options": [
+            "A complex, layered character",
+            "A comedic and witty lead",
+            "A strong, action-packed hero",
+            "A charming romantic interest"
+          ]
+        },
+        {
+          "question": "How do you handle criticism?",
+          "options": [
+            "Reflect and improve",
+            "Laugh it off",
+            "Stand your ground",
+            "Take it as a learning opportunity"
+          ]
+        },
+        {
+          "question": "Your best quality is:",
+          "options": [
+            "Intelligence",
+            "Charm",
+            "Strength",
+            "Empathy"
+          ]
+        },
+        {
+          "question": "In a team, you are usually the:",
+          "options": [
+            "Leader with vision",
+            "Motivator with energy",
+            "Reliable problem-solver",
+            "Creative and supportive member"
+          ]
+        }
+      ]
+    },
+    "movie": {
+      "questions": [
+        {
+          "question": "Which movie setting appeals to you the most?",
+          "options": [
+            "Urban life",
+            "Adventure in nature",
+            "Futuristic world",
+            "Historical period"
+          ]
+        },
+        {
+          "question": "What type of storyline resonates with you?",
+          "options": [
+            "Underdog triumph",
+            "Romantic saga",
+            "Hero's journey",
+            "Mystery/thriller"
+          ]
+        },
+        {
+          "question": "Your favorite film genre is:",
+          "options": [
+            "Drama",
+            "Sci-Fi",
+            "Action",
+            "Comedy"
+          ]
+        },
+        {
+          "question": "You prefer movies that are:",
+          "options": [
+            "Thought-provoking",
+            "Light-hearted",
+            "Edge-of-your-seat exciting",
+            "Emotionally moving"
+          ]
+        },
+        {
+          "question": "How do you feel about plot twists?",
+          "options": [
+            "They add depth",
+            "They make it fun",
+            "They keep you engaged",
+            "They create lasting memories"
+          ]
+        },
+        {
+          "question": "The pacing of your ideal movie is:",
+          "options": [
+            "Slow and deliberate",
+            "Quick and snappy",
+            "Balanced action and drama",
+            "A mix of intense and calm moments"
+          ]
+        },
+        {
+          "question": "Your movie snack of choice is:",
+          "options": [
+            "Popcorn",
+            "Nachos",
+            "Chocolate",
+            "Soda"
+          ]
+        },
+        {
+          "question": "Overall, your movie style is:",
+          "options": [
+            "Classic and timeless",
+            "Modern and innovative",
+            "Bold and transformative",
+            "Fun and heartwarming"
+          ]
+        }
+      ]
+    }
+  }

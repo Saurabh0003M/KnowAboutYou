@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Interactive personality quizzes to discover your mental age, celebrity match, and life movie">
+  <title>Interactive Quiz Platform</title>
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❓</text></svg>">
+</head>
+<body>
+  <!-- Water fill overlay for progress -->
+  <div id="water" aria-hidden="true"></div>
+
+  <!-- Loading Screen -->
+  <div id="loading" class="loading-screen hidden" aria-live="polite" aria-busy="true">
+    <div class="spinner" aria-hidden="true"></div>
+    <p>Loading Quiz...</p>
+  </div>
+
+  <!-- Home Section -->
+  <main id="home" class="section fadeIn" aria-labelledby="home-heading">
+    <div class="header-container">
+      <h1 id="home-heading">Welcome to Your Quiz Adventure!</h1>
+      <p>Discover fascinating insights about yourself with our fun personality quizzes:</p>
+    </div>
+    <div class="quiz-cards" role="group" aria-label="Quiz options">
+      <article class="card" data-quiz="mental_age" role="button" tabindex="0" aria-labelledby="mental-age-heading">
+        <div class="card-icon" aria-hidden="true">🧠</div>
+        <h2 id="mental-age-heading">Know Your Mental Age</h2>
+        <p>Discover your inner mindset.</p>
+        <div class="card-hover"></div>
+      </article>
+      <article class="card" data-quiz="actor" role="button" tabindex="0" aria-labelledby="actor-heading">
+        <div class="card-icon" aria-hidden="true">🎭</div>
+        <h2 id="actor-heading">Which Actor/Actress Suits You Best</h2>
+        <p>Find your star personality.</p>
+        <div class="card-hover"></div>
+      </article>
+      <article class="card" data-quiz="movie" role="button" tabindex="0" aria-labelledby="movie-heading">
+        <div class="card-icon" aria-hidden="true">🎬</div>
+        <h2 id="movie-heading">Which Movie Relates To Your Life</h2>
+        <p>Reveal the movie that defines you.</p>
+        <div class="card-hover"></div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Country Selection Section -->
+  <section id="country-selection" class="section hidden fadeIn" aria-labelledby="country-heading">
+    <div class="header-container">
+      <h2 id="country-heading">Select Your Country</h2>
+      <p>To provide the most relevant results, please select your country:</p>
+    </div>
+    <div class="country-form">
+      <select id="country-select" aria-label="Select your country">
+        <option value="" disabled selected>Select your country</option>
+      </select>
+      <button id="country-submit" class="primary-btn">Continue to Quiz</button>
+    </div>
+  </section>
+
+  <!-- Quiz Section -->
+  <section id="quiz" class="section hidden fadeIn" aria-labelledby="quiz-heading">
+    <div class="quiz-header">
+      <button id="quit-btn" class="quit-btn" aria-label="Quit quiz">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div class="progress-fill" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <span class="progress-text">Question <span id="current-q">1</span> of <span id="total-q">8</span></span>
+      </div>
+      <div class="timer" aria-live="polite">
+        <span class="timer-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+        </span>
+        <span id="quiz-timer">00:00</span>
+      </div>
+    </div>
+    <div id="question-section">
+      <h2 id="quiz-heading" class="sr-only">Quiz Questions</h2>
+      <p id="question-text" tabindex="0"></p>
+      <div id="options" role="radiogroup"></div>
+    </div>
+    <div class="controls">
+      <button id="prev-button" class="hidden" aria-label="Previous question">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Previous
+      </button>
+    </div>
+  </section>
+
+  <!-- Advertisement Section -->
+  <section id="ad-section" class="section hidden fadeIn" aria-labelledby="ad-heading">
+    <div class="ad-container">
+      <h2 id="ad-heading">Advertisement</h2>
+      <p>Your ad will play shortly...</p>
+      <div class="spinner" aria-hidden="true"></div>
+      <div id="ad-timer" aria-live="polite">10</div>
+      <button id="skip-ad" class="secondary-btn">Skip Ad</button>
+    </div>
+  </section>
+
+  <!-- Result Section -->
+  <section id="result" class="section hidden fadeIn" aria-labelledby="result-heading">
+    <div class="result-container">
+      <h2 id="result-heading">Your Quiz Results</h2>
+      <div class="result-image" id="result-image" aria-hidden="true" role="img"></div>
+      <div class="result-score">
+        <span id="score-text"></span>
+        <div class="score-bar">
+          <div id="score-fill"></div>
+        </div>
+      </div>
+      <div id="result-text" tabindex="0"></div>
+      <div class="action-buttons">
+        <button id="share-button" class="share-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+          Share Your Result
+        </button>
+        <button id="retake-btn" class="secondary-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 4v6h6"></path>
+            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+          </svg>
+          Retake Quiz
+        </button>
+      </div>
+      <div id="feedback">
+        <h3>Your Feedback Matters</h3>
+        <label for="feedback-input">Tell us what you think of this quiz:</label>
+        <textarea id="feedback-input" placeholder="What did you think of this quiz?" aria-label="Feedback input"></textarea>
+        <button id="submit-feedback">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 2L11 13"></path>
+            <path d="M22 2l-7 20-4-9-9-4 20-7z"></path>
+          </svg>
+          Submit Feedback
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script src="quiz.js" defer></script>
+</body>
+</html>
